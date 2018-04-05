@@ -16,9 +16,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func addTapped(_ sender: Any) {
+        
         let name = productNameTV.text ?? "New Product"
-        let price = Double(productPriceTV.text ?? "0.0")!
+        
+        let price : Double!
+        let priceInput = productPriceTV.text ?? "0.0"
+        if(priceInput == ""){
+            price = 0.0
+        } else {
+            price = Double(priceInput)!
+        }
+        
         let id = UUID.init()
+        
+        productNameTV.text = ""
+        productPriceTV.text = ""
         //products.append(ProductType(pId: id,pName: name,pPrice: price))
         
         
@@ -30,6 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         newProduct.name = name
         newProduct.price = price
         delegate.saveContext()
+        
         loadData()
         tableView.reloadData()
     }
@@ -46,6 +59,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     var products : Array<Product> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
