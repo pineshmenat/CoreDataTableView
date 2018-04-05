@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		085E56322075B38D005B397C /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyTableViewController.swift; path = CoreDataTableView/MyTableViewController.swift; sourceTree = "<group>"; };
+		085E56322075B38D005B397C /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		08B4A9ED206C5C5100AE0D02 /* CoreDataTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08B4A9F0206C5C5100AE0D02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08B4A9F2206C5C5100AE0D02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +42,6 @@
 		08B4A9E4206C5C5100AE0D02 = {
 			isa = PBXGroup;
 			children = (
-				085E56322075B38D005B397C /* MyTableViewController.swift */,
 				08B4A9EF206C5C5100AE0D02 /* CoreDataTableView */,
 				08B4A9EE206C5C5100AE0D02 /* Products */,
 			);
@@ -59,6 +58,7 @@
 		08B4A9EF206C5C5100AE0D02 /* CoreDataTableView */ = {
 			isa = PBXGroup;
 			children = (
+				085E56322075B38D005B397C /* MyTableViewController.swift */,
 				08B4A9F0206C5C5100AE0D02 /* AppDelegate.swift */,
 				08B4A9F2206C5C5100AE0D02 /* ViewController.swift */,
 				08B4A9F4206C5C5100AE0D02 /* Main.storyboard */,

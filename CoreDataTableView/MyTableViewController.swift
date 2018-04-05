@@ -55,8 +55,10 @@ class MyTableViewController: UITableViewController {
         destinationVC.selectedRowIndex = selectedRowIndex
     }
     var selectedRowIndex = -1
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedRowIndex = indexPath.row
-        performSegue(withIdentifier: "segue", sender: nil)
+        performSegue(withIdentifier: "toAddProduct", sender: nil)
+        selectedRowIndex = -1
     }
 }
