@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -53,13 +54,33 @@ class ViewController: UIViewController {
             }
             let delegate = UIApplication.shared.delegate as! AppDelegate
             let context = delegate.persistentContainer.viewContext
-            let fetchRequest = NSFetchRequest(id: eId)
+            
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName:"Product")
             do {
-                products = try context.fetch()
+                let results = try context.fetch(request)
+                if(results.count > 0) {
+                    for result in results as! [NSManagedObject]
+                    {
+                        if let uid = result.value(forKey: "id") as? UUID
+                        {
+                            if uid == eId {
+                                result.setValue(eName, forKey: "name")
+                                result.setValue(ePrice, forKey: "price")
+                                do {
+                                    try context.save()
+                                    loadData()
+                                } catch{
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
             } catch {
                 
             }
             
+
             loadData()
             navigationController?.popViewController(animated: true)
         }
